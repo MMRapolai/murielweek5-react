@@ -2,6 +2,7 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
+    console.log(props)
     return (
         <div className="weatherInfo">
             <h1>{props.data.city}</h1>
@@ -26,7 +27,7 @@ export default function WeatherInfo(props) {
     </div>
     </div>
     </div>
-    <div className="col-6">
+    <div className="col-4">
     <ul>
     <li>Humidity: {props.data.humidity}%</li>
     <li>Wind: {props.data.wind} km/h</li>
