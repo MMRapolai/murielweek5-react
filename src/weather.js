@@ -9,7 +9,7 @@ const [city, setCity] = useState(props.defaultCity);
 function handleResponse(response) {
 setweatherData({
 ready: true,
-temperature: response.data.tempereture,
+temperature: response.data.temperature.current,
 humidity: response.data.temperature.humidity,
 date: new Date(response.data.time * 1000),
 description: response.data.condition.description,
@@ -28,7 +28,7 @@ setCity(event.target.value);
 
 function search() {
 const apiKey = "57b13ef26a049644t26b08bo9241280d";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 axios.get(apiUrl).then(handleResponse);
 }
 if (weatherData.ready) {
